@@ -12,7 +12,7 @@
 #define Pi 3.1415
 using namespace std;
 
-agent::agent(){//constructor
+agent::agent(void){//constructor
     cout<<"constructor start!"<<endl;
     x_target = 0;y_target = 0;
     x_current = 0;y_current = 0;
@@ -22,7 +22,7 @@ agent::agent(){//constructor
     min_value = 0;
 }
 
-agent::~agent(){//destructor
+agent::~agent(void){//destructor
     cout<<"destructor finished!"<<endl;
 }
 

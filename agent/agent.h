@@ -10,8 +10,7 @@ using namespace std;
 class agent{
 
 public:
-    agent(); //constructor
-    ~agent(); //destructor
+    
     bool cmp(int a, int b);// compare function
     bool Flag();// flag function to determine flag value
     int double_equals(double const a,double const b); //equal function
@@ -34,6 +33,8 @@ public:
     void Distance(int agent); //during round calculation, it calculates and stores distance data(center point to target position)
     void agent_navigation(int agent); //generate each agent's next round center point position
     void navigation_check(int agent, int id_num); //calculate distance between each agent and update new center point
+    agent(); //constructor
+    ~agent(); //destructor
     
 private:
 
