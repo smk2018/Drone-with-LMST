@@ -163,9 +163,6 @@ void agent::random_tag() { //generate random agent's target position
     std::uniform_real_distribution<double> out1(0,1),out2(0,1);
     this->x_target = 5 + out1(gen1);
     this->y_target = 5 + out2(gen2);
-    //srand(i);
-    //this->x_target = 5 + (double)rand() / RAND_MAX;//5+u(e);
-    //this->y_target = 5 + (double)rand() / RAND_MAX;//5+u(e);
 }
 
 void agent::random_ori() { // generate random agent's original position
@@ -230,7 +227,7 @@ void agent::weight (int agent) { //calculate and store weights between n agents
            power_x=pow(x_cur.at(i)-x_cur.at(j),2);
            power_y=pow(y_cur.at(i)-y_cur.at(j),2);
            weight[i][j]=100*sqrt(power_x+power_y);//calculate weights between each agent
-           cout<<"weight("<<i<<","<<j<<")="<<weight[i][j]<<" ";
+           //cout<<"weight("<<i<<","<<j<<")="<<weight[i][j]<<" ";
            if (i!=j) {
             this->map[i][j] = weight[i][j];
             this->map[j][i] = weight[i][j];
@@ -240,7 +237,7 @@ void agent::weight (int agent) { //calculate and store weights between n agents
         for (j = 0; j< agent; j++) {
             total[i]+=weight[i][j];
         }
-    cout<<"total("<<i<<") = "<<total[i]<<endl;
+    //cout<<"total("<<i<<") = "<<total[i]<<endl;
     }
 }
 
@@ -266,7 +263,7 @@ void agent::LMST (int agent) { //Minimum Spanning Tree (prim algorithm). n is ag
                 k = j;
             }
         }
-        cout<<closest[k]<<","<<k<<" "<<"weight:"<<min<<endl;
+        //cout<<closest[k]<<","<<k<<" "<<"weight:"<<min<<endl;
         if (closest[k]>k) {
             this->n_index[i] = k; //agent_index & neighbor_index
             this->m_index[i] = closest[k];
@@ -469,5 +466,5 @@ void agent::navigation_check (int agent, int id_num) { //calculate distance betw
     }
     this->x_current = x_cur.at(id_num);
     this->y_current = y_cur.at(id_num);
-    //cout<<fixed<<setprecision(4)<<"x_cur("<<id_num<<")= "<<x_cur.at(id_num)<<" "<<"y_cur("<<id_num<<")= "<<y_cur.at(id_num)<<endl;
+    cout<<fixed<<setprecision(4)<<"x_cur("<<id_num<<")= "<<x_cur.at(id_num)<<" "<<"y_cur("<<id_num<<")= "<<y_cur.at(id_num)<<endl;
 }
