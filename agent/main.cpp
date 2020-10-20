@@ -26,7 +26,7 @@ int main() {
     }
     while (flag) { //while loop will continue working until the distance between current coordinate and target coordinate smaller than 0.8m
         for (i = 0;i < num;i++) {
-            flag = flag&&(AgentVector.at(i)->Flag()); //it will store all agents flag value.
+            flag = flag || (AgentVector.at(i)->Flag()); //it will store all agents flag value.
         }
         for (i = 0;i < num;i++) {//this for loop simulates drone's broadcast process
             if (k == 0) {
