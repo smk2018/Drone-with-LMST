@@ -448,10 +448,10 @@ void agent::navigation_check (int agent, int id_num) { //calculate distance betw
         for(j = 0;j < agent;j++) {
             test[i][j] = sqrt(pow(this->x_next.at(i)-this->x_next.at(j),2)+pow(this->y_next.at(i)-this->y_next.at(j),2));//after updating next round position, test the distance between each agent.
             if(test[i][j] < 1.0) {//if smaller than 1m, move to next round position
-                flag = true;
+                flag = flag && true;
             }
             else {//if bigger than 1m, move to next round position with half distance
-                flag = false;
+                flag = flag && false;
             }
         }
         
